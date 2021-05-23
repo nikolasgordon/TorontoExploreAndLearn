@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<p>Enter the length, width, and colour of the square and click the button to display the square.</p>
+<input type="text" id="myText" placeholder="Length">
+<input type="text" id="myText2" placeholder="Width">
+<label for="cars" id="myText3">Choose a colour:</label>
+
+<select name="cars" id="colours">
+  <option value="green">Green</option>
+  <option value="blue">Blue</option>
+  <option value="red">Red</option>
+  <option value="orange">Orange</option>
+  <option value="purple">Purple</option>
+  <option value="yellow">Yellow</option>
+  <option value="pink">Pink</option>
+  <option value="grey">Grey</option>
+  <option value="black">Black</option>
+  <option value="teal">Teal</option>
+  <option value="brown">Brown</option>
+  <option value="violet">Violet</option>
+</select> 
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+<div id="square"></div>
+
+<script>
+function myFunction() {
+  let x = document.getElementById("myText").value;
+  let x2 = document.getElementById("myText2").value;
+  let x3 = document.getElementById("colours").value;
+  if (x == "" || isNaN(x)) {
+    alert("length must be filled out");
+    return false;
+  }
+  if (x2 == "" || isNaN(x2)) {
+    alert("Width must be filled out");
+    return false;
+  }
+  if (x3 == "") {
+    alert("colour must be filled out");
+    return false;
+  }
+  let area = x*x2;
+  //document.getElementById("demo").innerHTML = x3;
+  let div = document.getElementById("square");
+  div.style.width = x2+"px";
+  div.style.height = x+"px";
+  div.style.background = x3;
+  div.style.color = "white";
+  div.innerHTML = "Hello";
+}
+</script>
+</body>
+</html>
